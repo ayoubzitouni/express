@@ -20,7 +20,8 @@ app.get('/contact',(req,res)=>{
 function timer(req,res,next){
     const timeNow=new Date()
     const Time=timeNow.getHours()
-    if(Time<17 && Time>9 ){
+    const day=timeNow.getDay()
+    if(Time<17 && Time>9 && day<=5){
         
     }else{
         res.status(200).render("error")
